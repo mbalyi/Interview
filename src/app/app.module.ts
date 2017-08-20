@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule, Http } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 // Angular Material
@@ -13,6 +14,9 @@ import { QuestionWidget } from './widgets/question.widget';
 // Server
 import { ServerService } from './../server';
 
+// Service
+import { CommunicationService } from './communication.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +24,16 @@ import { ServerService } from './../server';
     QuestionWidget
   ],
   imports: [
-    InMemoryWebApiModule.forRoot(ServerService),
+    HttpModule,
     BrowserModule,
+    InMemoryWebApiModule.forRoot(ServerService),
     MaterialModule,
     BrowserAnimationsModule,
     MdToolbarModule
   ],
   providers: [
-    OVERLAY_PROVIDERS
+    OVERLAY_PROVIDERS,
+    CommunicationService
   ],
   bootstrap: [AppComponent]
 })
