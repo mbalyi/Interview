@@ -15,11 +15,39 @@ $theme: mat-light-theme($primary, $accent, $warn);
     height: $size;
 }
 
+$blue: #1565c0;
+$dark-blue: #0e4686;
+$white: #f9f9f9;
+$dark-white: #fcfcfc;
+$background: $dark-white;
+$grey: #ececec;
+$dark-grey: #484848;
+
 html, header, body {
     @include size(100%);
     margin: 0;
     padding: 0;
     position: absolute;
+    font-family: "Proxima Nova",Arial,sans-serif;
+    background: $dark-white;
+}
+
+::-webkit-scrollbar {
+    width: 1em;
+}
+
+::-webkit-scrollbar-button {
+    background-color: $dark-blue;
+    border-radius: 0.1em;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #345e9b;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom,$blue,#345e9b);
+  outline: 1px solid $dark-blue;
 }
 
 app-home {
@@ -37,14 +65,89 @@ app-home {
         height: 90%;
         overflow-y: auto;
         top: 10%;
+    }
 
-        .footer {
-            position: absolute;
-            bottom: 0;
-        }
+    .footer {
+        width: 100%;
     }
 }
 
 app-header {
     width: 100%;
+}
+
+app-question {
+
+    > div {
+        width: 60%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .q-block {
+        border: 0.1em solid $grey;
+        background: $white;
+        color: $dark-blue;
+        margin-left: 20%;
+        margin-right: 20%;
+
+        .question {
+            font-size: 1.5em;
+            line-height: 1.5em;
+            box-sizing: border-box;
+            padding: 1em;
+            padding-bottom: 0.2em;
+        }
+
+        .answer {
+            margin-top: 0.5em;
+            padding: 0.5em;
+            padding-left: 2.5em;
+            border-top: 0.05em solid $grey;
+            cursor: pointer;
+            color: darken($grey, 50%);
+        }
+
+        .answer:hover {
+            color: $dark-blue;
+            background: $white;
+        }
+    }
+
+    .q-block.open {
+        background: #3b67a7;
+        color: $white;
+        border-color: $dark-blue;
+
+        .answer {
+            border-top-color: $dark-blue;
+            color: $white;
+            background: #345e9b;
+        }
+
+        .answer:hover {
+            color: $white;
+            background: #345e9b;
+        }
+    }
+
+    .q-block:hover {
+        border-color: $dark-blue;
+    }
+
+    .a-block {
+        display: none;
+    }
+
+    .a-block.open {
+        display: block;
+        margin-left: 22%;
+        margin-right: 20%;
+        width: 58%;
+        border: 0.05em solid $grey;
+        padding: 1em;
+        line-height: 1.5em;
+        color: $dark-grey;
+    }
+    
 }

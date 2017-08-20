@@ -3,15 +3,16 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-question',
   template: `
-    <div class="q-block">
+    <div class="q-block" [class.open]="isOpen">
         <div class="question">
             {{question}}
         </div>
         <div class="answer" (click)="open()">
-            <span *ngIf="!isOpen">View the answer -></span>
+            <span *ngIf="!isOpen">View the answer</span>
+            <span *ngIf="isOpen">Hide answer</span>
         </div>
     </div>
-    <div class="a-block">
+    <div class="a-block" [class.open]="isOpen">
         {{answer}}
     </div>
   `
@@ -23,6 +24,6 @@ export class QuestionWidget {
     public isOpen: Boolean = false;
 
     open() {
-
+        this.isOpen = !this.isOpen;
     }
 }
