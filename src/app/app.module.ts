@@ -7,13 +7,17 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 // Components
 import { AppComponent } from './app.component';
+import { HeaderWidget } from './widgets/header.widget';
+import { QuestionWidget } from './widgets/question.widget';
 
 // Server
 import { ServerService } from './../server';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderWidget,
+    QuestionWidget
   ],
   imports: [
     InMemoryWebApiModule.forRoot(ServerService),

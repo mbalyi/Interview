@@ -3,25 +3,16 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-home',
   template: `
-    <md-toolbar color="primary">
-      <span>Custom Toolbar</span>
+    <app-header></app-header>
 
-      <md-toolbar-row>
-        <span>Second Line</span>
-        <span class="example-spacer"></span>
-        <md-icon class="example-icon">verified_user</md-icon>
-      </md-toolbar-row>
+    <div class="m-block">
+      <app-question [question]="'???'" [answer]="'...'"></app-question>
 
-      <md-toolbar-row>
-        <span>Third Line</span>
-        <span class="example-spacer"></span>
-        <md-icon class="example-icon">favorite</md-icon>
-        <md-icon class="example-icon">delete</md-icon>
-      </md-toolbar-row>
-    </md-toolbar>
-  `,
-  styleUrls: ['./app.component.scss']
+      <md-toolbar class="footer" color="primary">
+        <span>Footer</span>
+      </md-toolbar>
+    </div>
+  `
 })
 export class AppComponent {
-  title = 'app';
 }
