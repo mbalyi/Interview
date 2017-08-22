@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderWidget } from './widgets/header.widget';
 import { QuestionWidget } from './widgets/question.widget';
+import { AnimationWidget } from './widgets/animation.widget';
 
 // Server
 import { ServerService } from './../server';
@@ -21,7 +22,8 @@ import { CommunicationService } from './communication.service';
   declarations: [
     AppComponent,
     HeaderWidget,
-    QuestionWidget
+    QuestionWidget,
+    AnimationWidget
   ],
   imports: [
     HttpModule,

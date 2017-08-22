@@ -11,6 +11,9 @@
 
 .header.large-header {
 	background: #1565c0;
+	background-image: url("./../assets/galaxy.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .main-title {

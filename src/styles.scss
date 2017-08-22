@@ -153,6 +153,39 @@ app-question {
         padding: 1em;
         line-height: 1.5em;
         color: $dark-grey;
+    }  
+}
+
+app-animation {
+    .b-animation {
+        @include size(100%);
+        position: absolute;
     }
-    
+
+    .column {
+        display: inline-block;
+    }
+
+    .b-animation .c-animation {
+        visibility: hidden;
+        border: 1px solid #3b67a7;
+        background-color: white;
+        float: left;
+        animation: sk-cubeGridScaleDelay 3s 1 ease-in-out; 
+    }
+
+    @keyframes sk-cubeGridScaleDelay {
+        0%, 70% {
+                transform: scale3D(1, 1, 1); 
+                visibility: visible;
+            }
+        35% {
+                transform: scale3D(0, 0, 1); 
+                visibility: visible;
+            } 
+        100% {
+                transform: scale3D(1, 1, 1); 
+                visibility: hidden;
+        }
+    }
 }
