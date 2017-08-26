@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HeaderWidget } from './widgets/header.widget';
 import { QuestionWidget } from './widgets/question.widget';
 import { AnimationWidget } from './widgets/animation.widget';
+import { FooterWidget } from './widgets/footer.widget';
 
 // Server
 import { ServerService } from './../server';
@@ -23,7 +24,8 @@ import { CommunicationService } from './communication.service';
     AppComponent,
     HeaderWidget,
     QuestionWidget,
-    AnimationWidget
+    AnimationWidget,
+    FooterWidget
   ],
   imports: [
     HttpModule,

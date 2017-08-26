@@ -5,14 +5,11 @@ import { CommunicationService, Question } from './communication.service';
 @Component({
   selector: 'app-home',
   template: `
-    <app-header></app-header>
+    <app-header (questions)="questions = $event;"></app-header>
 
     <div class="m-block">
       <app-question *ngFor="let question of questions;" [question]="question.question" [answer]="question.answer"></app-question>
-
-      <md-toolbar class="footer" color="primary">
-        <span>Footer</span>
-      </md-toolbar>
+      <app-footer></app-footer>
     </div>
   `
 })
@@ -22,7 +19,7 @@ export class AppComponent {
   constructor(public com: CommunicationService) {}
 
   ngOnInit() {
-    this.com.get("javascript").subscribe(
+    this.com.get("Javascript").subscribe(
       questions => this.questions = questions
     );
   }

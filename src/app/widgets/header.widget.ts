@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { CommunicationService, Question } from './../communication.service';
 declare function galaxy();
 
 @Component({
@@ -21,11 +22,18 @@ declare function galaxy();
 export class HeaderWidget {
     public buttons: String[] = ["Javascript", "Angular", "Java"];
     public siteName: String = "Interview Questions";
+
+    @Output() questions: EventEmitter<Question[]> = new EventEmitter<Question[]>();
+
+    constructor(public com: CommunicationService){}
+
     ngAfterViewInit() {
       galaxy();
     }
 
     public filter(btn: String) {
-
+      this.com.get(btn).subscribe(
+        questions => this.questions.emit(questions)
+      );
     }
 }

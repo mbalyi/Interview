@@ -3,7 +3,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class ServerService implements InMemoryDbService {
   createDb() {
     let backend = [
-        { id: `1`, category: `javascript`, question: `What is a potential pitfall with using typeof bar === "object" to determine if bar is an object? How can this pitfall be avoided?`, answer: `Although typeof bar === "object" is a reliable way of checking if bar is an object, the surprising gotcha in JavaScript is that null is also considered an object!
+        { id: `1`, category: `Javascript`, question: `What is a potential pitfall with using typeof bar === "object" to determine if bar is an object? How can this pitfall be avoided?`, answer: `Although typeof bar === "object" is a reliable way of checking if bar is an object, the surprising gotcha in JavaScript is that null is also considered an object!
 
         Therefore, the following code will, to the surprise of most developers, log true (not false) to the console:
 
@@ -23,7 +23,7 @@ export class ServerService implements InMemoryDbService {
         Or, if you’re using jQuery:
 
         console.log((bar !== null) && (typeof bar === "object") && (! $.isArray(bar)));`},
-        { id: `2`, category: `javascript`, question: `What will the code below output to the console and why?
+        { id: `2`, category: `Javascript`, question: `What will the code below output to the console and why?
 
         (function(){
         var a = b = 3;
@@ -47,7 +47,7 @@ export class ServerService implements InMemoryDbService {
         But how can b be defined outside of the scope of the enclosing function? Well, since the statement var a = b = 3; is shorthand for the statements b = 3; and var a = b;, b ends up being a global variable (since it is not preceded by the var keyword) and is therefore still in scope even outside of the enclosing function.
 
         Note that, in strict mode (i.e., with use strict), the statement var a = b = 3; will generate a runtime error of ReferenceError: b is not defined, thereby avoiding any headfakes/bugs that might othewise result. (Yet another prime example of why you should use use strict as a matter of course in your code!)`},
-        { id: `3`, category: `javascript`, question: `What will the code below output to the console and why?
+        { id: `3`, category: `Javascript`, question: `What will the code below output to the console and why?
 
         var myObject = {
             foo: "bar",
@@ -70,12 +70,12 @@ export class ServerService implements InMemoryDbService {
         In the outer function, both this and self refer to myObject and therefore both can properly reference and access foo.
 
         In the inner function, though, this no longer refers to myObject. As a result, this.foo is undefined in the inner function, whereas the reference to the local variable self remains in scope and is accessible there.`},
-        { id: `4`, category: `javascript`, question: `What is the significance of, and reason for, wrapping the entire content of a JavaScript source file in a function block?`, answer: `This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries.
+        { id: `4`, category: `Javascript`, question: `What is the significance of, and reason for, wrapping the entire content of a JavaScript source file in a function block?`, answer: `This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries.
 
         Another feature of this technique is to allow for an easily referenceable (presumably shorter) alias for a global variable. This is often used, for example, in jQuery plugins. jQuery allows you to disable the $ reference to the jQuery namespace, using jQuery.noConflict(). If this has been done, your code can still use $ employing this closure technique, as follows:
 
         (function($) { /* jQuery plugin code referencing $ */ } )(jQuery);`},
-        { id: `5`, category: `javascript`, question: `What is the significance, and what are the benefits, of including 'use strict' at the beginning of a JavaScript source file?`, answer: `the short and most important answer here is that use strict is a way to voluntarily enforce stricter parsing and error handling on your JavaScript code at runtime. Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions. In general, it is a good practice.
+        { id: `5`, category: `Javascript`, question: `What is the significance, and what are the benefits, of including 'use strict' at the beginning of a JavaScript source file?`, answer: `the short and most important answer here is that use strict is a way to voluntarily enforce stricter parsing and error handling on your JavaScript code at runtime. Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions. In general, it is a good practice.
 
         Some of the key benefits of strict mode include:
 
@@ -85,26 +85,16 @@ export class ServerService implements InMemoryDbService {
         Disallows duplicate property names or parameter values. Strict mode throws an error when it detects a duplicate named property in an object (e.g., var object = {foo: "bar", foo: "baz"};) or a duplicate named argument for a function (e.g., function foo(val1, val2, val1){}), thereby catching what is almost certainly a bug in your code that you might otherwise have wasted lots of time tracking down.
         Makes eval() safer. There are some differences in the way eval() behaves in strict mode and in non-strict mode. Most significantly, in strict mode, variables and functions declared inside of an eval() statement are not created in the containing scope (they are created in the containing scope in non-strict mode, which can also be a common source of problems).
         Throws error on invalid usage of delete. The delete operator (used to remove properties from objects) cannot be used on non-configurable properties of the object. Non-strict code will fail silently when an attempt is made to delete a non-configurable property, whereas strict mode will throw an error in such a case.`},
-        { id: `6`, category: `javascript`, question: ``, answer: ``},
-        { id: `7`, category: `javascript`, question: ``, answer: ``},
-        { id: `8`, category: `javascript`, question: ``, answer: ``},
-        { id: `9`, category: `javascript`, question: ``, answer: ``},
-        { id: `10`, category: `javascript`, question: ``, answer: ``},
-        { id: `11`, category: `javascript`, question: ``, answer: ``},
-        { id: `12`, category: `javascript`, question: ``, answer: ``},
-        { id: `13`, category: `javascript`, question: ``, answer: ``},
-        { id: `14`, category: `javascript`, question: ``, answer: ``},
-        { id: `15`, category: `javascript`, question: ``, answer: ``},
-        { id: `16`, category: `javascript`, question: ``, answer: ``},
-        { id: `17`, category: `javascript`, question: ``, answer: ``},
-        { id: `18`, category: `javascript`, question: ``, answer: ``},
-        { id: `19`, category: `javascript`, question: ``, answer: ``},
-        { id: `20`, category: `javascript`, question: ``, answer: ``},
-        { id: `21`, category: `javascript`, question: ``, answer: ``},
-        { id: `22`, category: `javascript`, question: ``, answer: ``},
-        { id: `23`, category: `javascript`, question: ``, answer: ``},
-        { id: `24`, category: `javascript`, question: ``, answer: ``},
-        { id: `25`, category: `javascript`, question: ``, answer: ``}
+        { id: `6`, category: `Java`, question: ``, answer: ``},
+        { id: `7`, category: `Java`, question: ``, answer: ``},
+        { id: `8`, category: `Java`, question: ``, answer: ``},
+        { id: `9`, category: `Java`, question: ``, answer: ``},
+        { id: `10`, category: `Java`, question: ``, answer: ``},
+        { id: `11`, category: `Angular`, question: ``, answer: ``},
+        { id: `12`, category: `Angular`, question: ``, answer: ``},
+        { id: `13`, category: `Angular`, question: ``, answer: ``},
+        { id: `14`, category: `Angular`, question: ``, answer: ``},
+        { id: `15`, category: `Angular`, question: ``, answer: ``}
     ];
     return {backend};
   }

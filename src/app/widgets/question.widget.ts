@@ -4,10 +4,6 @@ import { Component, Input, ElementRef, ViewChild } from '@angular/core';
   selector: 'app-question',
   template: `
     <div class="q-block" [class.open]="isOpen">
-        <app-animation *ngIf="isOpen" [pHeight]="$question.nativeElement.clientHeight"
-            [pWidth]="$question.nativeElement.clientWidth"
-            [rowNo]="5"
-            [columnNo]="40"></app-animation>
         <div class="question" #q>
             {{question}}
         </div>
