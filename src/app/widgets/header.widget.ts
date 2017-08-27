@@ -20,7 +20,7 @@ declare function galaxy();
   `
 })
 export class HeaderWidget {
-    public buttons: String[] = ["Javascript", "Angular", "Java"];
+    public buttons: String[] = ["Javascript", "Angular", "Java 8"];
     public siteName: String = "Interview Questions";
 
     @Output() questions: EventEmitter<Question[]> = new EventEmitter<Question[]>();

@@ -12,9 +12,7 @@ import { Component, Input, ElementRef, ViewChild } from '@angular/core';
             <span *ngIf="isOpen">Hide answer</span>
         </div>
     </div>
-    <div class="a-block" [class.open]="isOpen">
-        {{answer}}
-    </div>
+    <div class="a-block" [class.open]="isOpen">{{answer}}</div>
   `
 })
 export class QuestionWidget {

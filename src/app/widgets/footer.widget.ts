@@ -7,7 +7,7 @@ declare function galaxy();
   template: `
     <div>
         <div class="content">
-        <span class="title">Demo page of <span class="thin">Mark Balyi</span></span>
+        <span class="title"><span class="thin">Mark Balyi</span>'s demo page</span>
 
         <span>This site is made in <span class="title">Angular 4</span> with <span class="title">In-memory web application</span> technology.</span>
         <span>First try of <span class="title">including Javascript libraries</span> into Angular 4 projects and creating <span class="title">animated headers</span> with JS.</span>
@@ -34,7 +34,7 @@ export class FooterWidget {
     public links:any[] = [
         {title: "Javascript", page: "TopTal Developers", url: "https://www.toptal.com/javascript/interview-questions"},
         {title: "Angular", page: "Code Project", url: "https://www.codeproject.com/Articles/1169073/Angular-Interview-Questions"},
-        {title: "Java", page: "Tutorials Point", url: "https://www.tutorialspoint.com/java8/java8_interview_questions.htm"}
+        {title: "Java 8", page: "Tutorials Point", url: "https://www.tutorialspoint.com/java8/java8_interview_questions.htm"}
     ];
 
     public color: string = undefined;
