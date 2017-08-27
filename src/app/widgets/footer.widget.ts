@@ -19,7 +19,7 @@ declare function galaxy();
                     {{link.title}}
                 </md-card-subtitle>
                 <md-card-header>
-                    <md-card-title>{{link.page}}</md-card-title>
+                    <md-card-title><span class="title">{{link.page}}</span></md-card-title>
                 </md-card-header>
                 <md-card-content>
                     <a md-button href="{{link.url}}">Open</a>
