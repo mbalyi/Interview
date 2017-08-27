@@ -14,7 +14,8 @@ declare function galaxy();
         <span>The questions are supported from <span class="title">different sites</span>:</span></div>
 
         <div class="cards">
-            <md-card *ngFor="let link of links" class="languages">
+            <md-card *ngFor="let link of links" class="languages" (mouseenter)="color = link.title" (mouseleave)="color = undefined"
+            [class.tobackground]="color != undefined && color != link.title">
                 <md-card-subtitle>
                     {{link.title}}
                 </md-card-subtitle>
@@ -35,4 +36,6 @@ export class FooterWidget {
         {title: "Angular", page: "Code Project", url: "https://www.codeproject.com/Articles/1169073/Angular-Interview-Questions"},
         {title: "Java", page: "Tutorials Point", url: "https://www.tutorialspoint.com/java8/java8_interview_questions.htm"}
     ];
+
+    public color: string = undefined;
 }

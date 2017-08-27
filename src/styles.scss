@@ -138,6 +138,10 @@ app-footer {
                 md-card-title {
                     text-align: center;
                 }
+
+                &.tobackground {
+                    opacity: 0.5;
+                }
             }
 
             md-card:hover {
