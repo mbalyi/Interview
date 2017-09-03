@@ -5,6 +5,7 @@ var galaxy = function() {
     initHeader();
     initAnimation();
     addListeners();
+    mouseMove({clientX: 65, clientY: 0, pageX: 65, pageY: 0});
 
     function initHeader() {
         width = window.innerWidth;
